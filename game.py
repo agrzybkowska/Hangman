@@ -1,6 +1,6 @@
-from letters_word import LetterWord
+from letters_actions import Letters
 
-class Game(LetterWord):
+class Game(Letters):
 
     def __init__(self):
         super().__init__()
@@ -17,8 +17,8 @@ class Game(LetterWord):
 
     def new_game(self):
         # reset all assigned values to the attributes
-        LetterWord.word_to_guess(self)
-        LetterWord.letters_list(self)
+        Letters.word_to_guess(self)
+        Letters.letters_list(self)
         self.letters_guessed.clear()
         self.missed_lives = 10
 
