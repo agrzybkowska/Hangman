@@ -1,3 +1,4 @@
+from word import Word
 from letters_actions import Letters
 
 class Game(Letters):
@@ -17,10 +18,10 @@ class Game(Letters):
 
     def new_game(self):
         # reset all assigned values to the attributes
-        Letters.word_to_guess(self)
-        Letters.letters_list(self)
-        self.letters_guessed.clear()
-        self.missed_lives = 10
+        Word.word_to_guess(self)
+        Word.letters_list(self)
+        Letters.letters_guessed_reset(self)
+        Letters.missed_lives_reset(self)
 
     def available_letters_display(self):
         return ' '.join(self.available_letters)

@@ -16,8 +16,8 @@ class Letters(Word):
                 }
 
     def __init__(self):
-        super().__init__()
         # initialize attributes
+        super().__init__()
         self.letters_guessed = []
         self.missed_lives = 10
 
@@ -58,6 +58,13 @@ class Letters(Word):
             print("Sorry, incorrect letter.")
             return hangman_graphic.lives_num(self.missed_lives)
 
+    def letters_guessed_reset(self):
+        return self.letters_guessed.clear()
 
-x = Letters()
-print(x.letter_input())
+    def missed_lives_reset(self):
+        self.missed_lives = 10
+        return self.missed_lives
+
+
+# x = Letters()
+# print(x.letter_input())

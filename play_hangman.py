@@ -1,10 +1,14 @@
+from game import Game
 
-class HangmanPlay:
+class HangmanPlay(Game):
+
+    def __init__(self):
+        super().__init__()
 
     def play_hangman(self):
-        while self.game_welcome() == "y":
+        while Game.game_welcome(self) == "y":
             # starting a new game
-            self.new_game()
+            Game.new_game(self)
             print("Welcome to the Hangman Game!")
             print(self.missed_lives)
             # play if you still have lives and your word is not guessed
@@ -29,5 +33,5 @@ class HangmanPlay:
             print("No worries. See you soon. Bye.")
 
 
-word1 = Hangman()
+word1 = HangmanPlay()
 word1.play_hangman()
